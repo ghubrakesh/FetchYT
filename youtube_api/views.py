@@ -7,7 +7,7 @@ from .serializers import VideoSerializer
 
 class VideoListView(APIView):
     def get(self, request, *args, **kwargs):
-        import pdb; pdb.set_trace()
+        # import pdb; pdb.set_trace()
         videos = Video.objects.all()
         paginator = VideoPagination()
         paginated_videos = paginator.paginate_queryset(videos, request)
