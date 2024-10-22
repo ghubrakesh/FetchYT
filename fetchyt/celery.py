@@ -65,6 +65,6 @@ def fetch_latest_videos():
 app.conf.beat_schedule = {
     'fetch-latest-videos-every-10-seconds': {
         'task': 'fetchyt.celery.fetch_latest_videos',
-        'schedule': 10.0,
+        'schedule': 600.0,
     },
 }
