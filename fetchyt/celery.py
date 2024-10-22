@@ -21,7 +21,7 @@ def fetch_latest_videos():
     from youtube_api.models import Video
     YOUTUBE_API_KEY = random.choice(API_KEYS)
     SEARCH_QUERY = 'cricket' 
-    url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={SEARCH_QUERY}&publishedAfter=2020-01-01T00:00:00Z&order=date&type=video&key={YOUTUBE_API_KEY}'
+    url = f'https://www.googleapis.com/youtube/v3/search?part=snippet&q={SEARCH_QUERY}&maxResults=5&publishedAfter=2024-10-10T00:00:00Z&order=date&type=video&key={YOUTUBE_API_KEY}'
 
     response = requests.get(url)
     if response.status_code == 200:
