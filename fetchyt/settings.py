@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-smmem-u&5u@fqi3kh!+v#n+!yjsy)a8z=in5r%=3-55ha)=t5l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -91,32 +91,11 @@ DATABASES = {
 	"default": dj_database_url.parse(os.getenv('DATABASE_URL'))
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'youtube_db',
-#         'USER': 'your_user',
-#         'PASSWORD': 'your_password',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
-
-# Celery settings   
-CELERY_BROKER_URL = 'redis://red-csbqitq3esus73fvmobg:6379/0'
-CELERY_RESULT_BACKEND = 'redis://red-csbqitq3esus73fvmobg:6379/0'
+# Celery settings  
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
-
-CACHES = {
-    'default': {
-        'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': CELERY_BROKER_URL,  # Replace with your Redis server details
-        'OPTIONS': {
-            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-        }
-    }
-}
 
 
 # Password validation
