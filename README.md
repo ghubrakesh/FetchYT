@@ -12,6 +12,16 @@ It fetches the latest 10 videos sorted by most recently applied on youtube for t
 
 ## endpoints:
 1. `/videos` : Fetches the latest 10 videos sorted by most recently applied on youtube for the topic `Cricket`. It fetches it from PostgreSQL database. It also returns link to next page if more than 10 videos are present in the database.
+2. `admin/youtube_api/video/` : List of all the videos stored in database. List, sort, and filter videos. (Needs login credentials as given below)
+   
+### To access all videos and sort/filter out all videos 
+- use admin panel at http://127.0.0.1:8000/admin/youtube_api/video/
+- use credentials as:
+  ```yaml
+  Username: demo_user
+  Password: Pass@123
+  ```
+- View, Filter and sort the videos.
 
 ## Local Setup:
 1. Install required packages:
@@ -46,7 +56,7 @@ It fetches the latest 10 videos sorted by most recently applied on youtube for t
     ```bash
     http://localhost:8000/videos/
     ```
-
+      
 ### Request (cURL):
 ```bash
 curl --location 'http://127.0.0.1:8000/videos/' \
